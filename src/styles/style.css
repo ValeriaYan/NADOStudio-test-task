@@ -6,3 +6,94 @@
     --color-text-second: #000000;
     --color-text-mute: #b5b4b4;
 }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-text)
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text)
+}
+
+
+.fullscreen {
+    height: 100vh;
+}
+
+.header {
+    background-color: var(--color-primary);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__logo img {
+    max-width: 290px;
+}
+
+.header__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: auto;
+    gap: 30px;
+}
+
+.header__login-btn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--color-text);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@media (hover:hover) {
+    .header__login-btn:hover {
+        color: var(--color-accent);
+        transition: all ease 0.2s;
+    }
+}
+
+.nav__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px
+}
+
+.header__nav {
+    margin-top: auto;
+}
+
+.nav__item {
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    cursor: pointer;
+
+}
+
+.nav__item:last-child {
+    margin-right: 0;
+}
+
+@media (hover:hover) {
+    .nav__item:hover a {
+        color: var(--color-accent);
+        transition: all ease 0.2s;
+    }
+}
+
+.nav__item.active a {
+    color: var(--color-accent);
+    font-weight: 700;
+}
