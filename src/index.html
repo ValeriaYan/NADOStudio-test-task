@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Playfair:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./styles/style.css">
     <title>mmLampadari</title>
 </head>
@@ -39,8 +40,23 @@
                     </nav>
                 </div>
             </header>
-            <main class="main"></main>
+            <main class="main">
+                <div class="main__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image: url('./images/bg.jpg');"></div>
+                        <div class="swiper-slide" style="background-image: url('./images/bg.jpg');"></div>
+                        <div class="swiper-slide" style="background-image: url('./images/bg.jpg');"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="main__hero hero">
+                    <h1 class="hero__title">Lampadari contemporanei</h1>
+                    <div class="hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </div>
+                </div>
+            </main>
         </div>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./scripts/swiper.js"></script>
 </body>
 </html>
