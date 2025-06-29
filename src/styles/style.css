@@ -2,14 +2,18 @@
     --color-primary: #353436;
     --color-secondary: #ffffff;
     --color-accent: #e2d1a6;
+    --color-dark: #000000;
     --color-text: #ffffff;
     --color-text-second: #000000;
     --color-text-mute: #b5b4b4;
+    --toggle-height: 30px;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: var(--color-text)
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 400;
 }
 
 a {
@@ -28,7 +32,6 @@ p {
 
 .fullscreen {
     height: 100vh;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -99,7 +102,7 @@ p {
     }
 }
 
-.nav__item.active a {
+.nav__item._active a {
     color: var(--color-accent);
     font-weight: 700;
 }
@@ -178,4 +181,85 @@ p {
 
 .swiper-pagination-bullet-active {
     background-color: var(--color-accent);
+}
+
+.main__bottom-panel {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateY(calc(100% - var(--toggle-height)));
+    transition: all ease 0.2s;
+}
+
+.main__bottom-panel._active {
+    transform: translateY(0);
+}
+
+.bottom-panel__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: var(--toggle-height);
+    width: 88px;
+    background-color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+}
+
+.bottom-panel__toggle img {
+    transition: all ease 0.4s;
+}
+
+.bottom-panel._active .bottom-panel__toggle img {
+    transform: rotate(180deg);
+}
+
+.bottom-panel__content {
+    padding: 0 20px;
+}
+
+.bottom-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bottom-panel__item {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    padding: 20px 30px 10px 20px;
+
+    background-color: var(--bottom-panel-bg, var(--color-secondary));
+    color: var(--bottom-panel-text, var(--color-text-second))
+}
+
+.bottom-panel__item--accent {
+    --bottom-panel-bg: var(--color-accent);
+    --bottom-panel-text: var(--color-text-second);
+}
+
+.bottom-panel__item--dark {
+    --bottom-panel-bg: var(--color-dark);
+    --bottom-panel-text: var(--color-text);
+}
+
+.bottom-panel__title {
+    grid-row: 1;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 107%;
+    margin: 0
+}
+
+.bottom-panel__text {
+    grid-row: 2;
+    line-height: 156%;
+}
+
+.bottom-panel__link {
+    grid-row: 3;
+    justify-self: end;
+    color: inherit;
 }
