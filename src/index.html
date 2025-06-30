@@ -18,7 +18,7 @@
                     <img src="./images/logo.png" alt="mmLampadari logo">
                 </a>
                 <div class="header__info">
-                    <button type="button" class="header__login-btn">AREA RISERVATA</button>
+                    <button type="button" class="header__login-btn" id="openModal">AREA RISERVATA</button>
                     <nav class="header__nav nav">
                         <ul class="nav__list">
                             <li class="nav__item _active">
@@ -96,8 +96,10 @@
                 <div class="footer__column">
                     <h4 class="footer__title">NEWSLETTER</h4>
                     <form action="" class="footer__form form">
-                        <input type="text" class="form__input" placeholder="Nome e Cognome">
-                        <input type="email" class="form__input" placeholder="Email">
+                        <div class="form__inputs">
+                            <input type="text" class="form__input" placeholder="Nome e Cognome">
+                            <input type="email" class="form__input" placeholder="Email">
+                        </div>
                         <label for="" class="form__checkbox">
                             <input type="checkbox">
                             Acconsento al trattamento dei dati
@@ -142,8 +144,53 @@
             </div>
         </footer>
     </div>
+    <div id="overlay" class="overlay">
+        <div class="modal" id="modal">
+            <button class="modal__close-btn" id="closeModal">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="31" viewBox="0 0 50 50">
+                    <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+                </svg>
+            </button>
+            <div class="modal__body">
+                <h2 class="modal__title">AREA RISERVATA</h2>
+                <div class="modal__forms">
+                    <form action="" class="modal__form form">
+                        <h3 class="form__title">ACCEDI</h3>
+                        <div class="form__inputs">
+                            <input type="email" class="form__input" placeholder="E-mail">
+                            <input type="password" class="form__input" placeholder="Password">
+                        </div>
+                        <button type="submit" class="form__btn">ACCEDI</button>
+                        <a href="" class="form__link">Password dimenticata</a>
+                    </form>
+                    <form action="" class="modal__form form">
+                        <h3 class="form__title">REGISTRATI</h3>
+                        <div class="form__inputs">
+                            <input type="text" class="form__input" placeholder="Nome">
+                            <input type="text" class="form__input" placeholder="Cognome">
+                            <input type="email" class="form__input" placeholder="E-mail">
+                            <input type="password" class="form__input" placeholder="Password">
+                        </div>
+                        <div class="form__checkboxes">
+                            <label for="" class="form__checkbox">
+                                <input type="checkbox">
+                                Acconsento al trattamento dei dati
+                            </label>
+                            <label for="" class="form__checkbox">
+                                <input type="checkbox">
+                                Mi iscrivo alla Newsletter
+                            </label>
+                        </div>
+                        <button type="submit" class="form__btn">ISCRIVITI</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./scripts/swiper.js"></script>
     <script src="./scripts/toggleBottomPanel.js"></script>
+    <script src="./scripts/modal.js"></script>
 </body>
 </html>
