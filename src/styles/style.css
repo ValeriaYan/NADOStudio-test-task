@@ -52,7 +52,7 @@ button, input {
 }
 
 .header__logo img {
-    max-width: 290px;
+    max-width: 280px;
 }
 
 .header__info {
@@ -199,11 +199,11 @@ button, input {
     top: 50%;
     right: 0;
     z-index: 2;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
 }
 
 .hero {
-    padding: 14px 26px;
+    padding: 14px 26px 18px;
     background-color: rgba(255, 255, 255, .85);
     max-width: 550px;
 }
@@ -227,9 +227,9 @@ button, input {
 .swiper-pagination {
     display: flex;
     margin: 0 auto;
-    gap: 11px;
+    gap: 4px;
     justify-content: center;
-    margin-bottom: 95px;
+    margin-bottom: 30px;
 }
 
 
@@ -285,7 +285,7 @@ button, input {
 }
 
 .bottom-panel__content {
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .bottom-panel__grid {
@@ -296,7 +296,7 @@ button, input {
 .bottom-panel__item {
     display: grid;
     grid-template-rows: 1fr auto auto;
-    padding: 20px 30px 10px 20px;
+    padding: 14px 22px 10px 15px;
 
     background-color: var(--bottom-panel-bg, var(--color-secondary));
     color: var(--bottom-panel-text, var(--color-text-second))
@@ -315,27 +315,48 @@ button, input {
 .bottom-panel__title {
     grid-row: 1;
     font-weight: 700;
-    font-size: 28px;
-    line-height: 107%;
-    margin: 0
+    font-size: 34px;
+    line-height: 90%;
+    margin-bottom: 5px;
 }
 
 .bottom-panel__text {
     grid-row: 2;
     line-height: 156%;
+    margin-bottom: 10px;
 }
 
 .bottom-panel__link {
+    position: relative;
+    font-size: 18px;
     grid-row: 3;
     justify-self: end;
     color: inherit;
+}
+
+.bottom-panel__link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    transform: translateX(-50%);
+    transition: all ease 0.2s;
+}
+
+@media(hover:hover) {
+    .bottom-panel__link:hover:after {
+        width: 100%;
+    }
 }
 
 .footer {
     position: relative;
     z-index: 11;
     background-color: var(--color-primary);
-    padding: 38px 17px 18px 55px;
+    padding: 38px 40px 18px 40px;
 }
 
 .footer__body {
@@ -346,7 +367,11 @@ button, input {
 }
 
 .footer__column {
-    max-width: 185px;
+    max-width: 180px;
+}
+
+.footer__form.form {
+    gap: 3px;
 }
 
 .footer__title {
@@ -354,43 +379,45 @@ button, input {
     font-size: 16px;
     line-height: 100%;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 22px;
 }
 
 .footer__text {
     font-weight: 300;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 145%;
 }
 
 .footer__bottom {
     display: flex;
-    gap: 160px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .footer__info {
+    flex: 3;
     display: flex;
     gap: 20px;
-    align-items: center;
+    align-items: flex-end;
     font-weight: 400;
     font-size: 12px;
 }
 
 .footer__wrap {
+    flex: 1;
     display: flex;
-    gap: 80px;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 .footer__socials {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
 }
 
 .footer__social {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
     fill: var(--color-secondary)
 }
 
@@ -404,7 +431,7 @@ button, input {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 23px;
+    gap: 20px;
 }
 
 .footer__lang {
@@ -421,7 +448,7 @@ button, input {
   right: -11px;
   top: 50%;
   transform: translateY(-50%);
-  height: 14px; 
+  height: 12px; 
   width: 1px;
   background-color: #ccc;
 }
@@ -498,6 +525,7 @@ button, input {
 
 .footer__form .form__input {
     font-size: 13px;
+    padding: 8px 5px;
 }
 
 .form__inputs {
