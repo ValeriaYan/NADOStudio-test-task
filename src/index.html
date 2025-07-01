@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./styles/style.css">
@@ -75,7 +78,9 @@
                 </div>
                 <div class="main__bottom-panel bottom-panel">
                     <button class="bottom-panel__toggle">
-                        <img width="41" height="35" src="https://img.icons8.com/ios/50/collapse-arrow--v1.png" alt="collapse-arrow--v1"/>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="41" height="35" viewBox="0 0 1024 1024">
+                            <path  d="M8.2 751.4c0 8.6 3.4 17.401 10 24.001c13.2 13.2 34.8 13.2 48 0l451.8-451.8l445.2 445.2c13.2 13.2 34.8 13.2 48 0s13.2-34.8 0-48L542 251.401c-13.2-13.2-34.8-13.2-48 0l-475.8 475.8c-6.8 6.8-10 15.4-10 24.2z"/>
+                        </svg>
                     </button>
                     <div class="bottom-panel__content">
                         <div class="bottom-panel__grid">
@@ -115,16 +120,16 @@
                 </div>
                 <div class="footer__column footer__column--form">
                     <h4 class="footer__title">Newsletter</h4>
-                    <form action="" class="footer__form form">
+                    <form action="#" class="footer__form form">
                         <div class="form__inputs">
-                            <input type="text" class="form__input" placeholder="Nome e Cognome">
-                            <input type="email" class="form__input" placeholder="Email">
+                            <input type="text" class="form__input" name="fullname" id="news-name" placeholder="Nome e Cognome" required>
+                            <input type="email" class="form__input" name="email" id="news-email" placeholder="Email" required>
                         </div>
-                        <label for="" class="form__checkbox">
-                            <input type="checkbox">
+                        <label for="news-consent" class="form__checkbox">
+                            <input type="checkbox" name="consent" id="news-consent" value="yes" required>
                             Acconsento al trattamento dei dati
                         </label>
-                        <button type="submit" class="form__btn">IScriviti</button>
+                        <button type="submit" class="form__btn">Iscriviti</button>
                     </form>
                 </div>
             </div>
@@ -175,30 +180,30 @@
             <div class="modal__body">
                 <h2 class="modal__title">Area riservata</h2>
                 <div class="modal__forms">
-                    <form action="" class="modal__form form">
+                    <form action="#" class="modal__form form">
                         <h3 class="form__title">Accedi</h3>
                         <div class="form__inputs">
-                            <input type="email" class="form__input" placeholder="E-mail">
-                            <input type="password" class="form__input" placeholder="Password">
+                            <input type="email" class="form__input" name="email" id="login-email" placeholder="E-mail" required>
+                            <input type="password" class="form__input" name="password" id="login-password" placeholder="Password" required>
                         </div>
                         <button type="submit" class="form__btn">Accedi</button>
                         <a href="" class="form__link">Password dimenticata</a>
                     </form>
-                    <form action="" class="modal__form form">
+                    <form action="#" class="modal__form form">
                         <h3 class="form__title">Registratti</h3>
                         <div class="form__inputs">
-                            <input type="text" class="form__input" placeholder="Nome">
-                            <input type="text" class="form__input" placeholder="Cognome">
-                            <input type="email" class="form__input" placeholder="E-mail">
-                            <input type="password" class="form__input" placeholder="Password">
+                            <input type="text" class="form__input" name="name" id="reg-name" placeholder="Nome" required>
+                            <input type="text" class="form__input" name="surname" id="reg-surname" placeholder="Cognome" required>
+                            <input type="email" class="form__input" name="email" id="reg-email" placeholder="E-mail" required>
+                            <input type="password" class="form__input" name="password" id="reg-password" placeholder="Password" required>
                         </div>
                         <div class="form__checkboxes">
-                            <label for="" class="form__checkbox">
-                                <input type="checkbox">
+                            <label for="reg-consent" class="form__checkbox">
+                                <input type="checkbox" name="consent" id="reg-consent" required>
                                 Acconsento al trattamento dei dati
                             </label>
-                            <label for="" class="form__checkbox">
-                                <input type="checkbox">
+                            <label for="reg-news" class="form__checkbox">
+                                <input type="checkbox" name="news" id="reg-news" value="yes">
                                 Mi iscrivo alla Newsletter
                             </label>
                         </div>
@@ -210,9 +215,6 @@
         </div>
     </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./scripts/swiper.js"></script>
-    <script src="./scripts/toggleBottomPanel.js"></script>
-    <script src="./scripts/modal.js"></script>
-    <script src="./scripts/burger.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
